@@ -26,9 +26,9 @@ Motor::Motor(int entrada, bool reverse) {
 
   if(Motor::PORTA_1 ^ Motor::PORTA_2) {
    // Encoder encoder(entrada);
-    EncoderESP encoderESP(entrada);
+    Encoder encoderESP(entrada);
   //  this->encoder = encoder;
-    this->encoderESP = encoderESP;
+    this->encoder = encoderESP;
   }
 }
 
@@ -77,10 +77,12 @@ void Motor::pinos(int entrada) {
  */
 void Motor::setPower(double power) {
   power = max(-1.0, min(1.0, power));
-  int output_res = abs(power) * 1023;
+  int output_res = abs(power) * 1002;
   if (power < 0) {
+    ledcWrite(channelA, 0);
     ledcWrite(channelB, output_res);
   } else if(power > 0){
+    ledcWrite(channelB, 0);
     ledcWrite(channelA, output_res);
   } else {
     ledcWrite(channelA, 0);
