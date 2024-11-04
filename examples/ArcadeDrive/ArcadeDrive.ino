@@ -1,7 +1,7 @@
-#include "stemOSboard.h"
+#include "Arara.h"
 
 void setup() {
-  wifi.configureWiFiAP();
+  Arara.start();
 }
 
 void loop() {
