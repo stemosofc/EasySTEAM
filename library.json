@@ -1,11 +1,11 @@
 {
-    "name": "Arara",
+    "name": "EasySTEAM",
     "keywords": "esp32, ftc",
-    "description": "Biblioteca para utilização do controlador Arara",
+    "description": "Biblioteca para utilização do controlador EasySTEAM",
     "repository":
     {
         "type": "git",
-        "url": "https://github.com/stemosofc/AraraLib"
+        "url": "https://github.com/stemosofc/EasySTEAM"
     },
     "authors":
     {

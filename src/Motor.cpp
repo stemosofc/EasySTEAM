@@ -3,8 +3,8 @@
 /**
  * @brief Cria um objeto de Motor
  *
- * @param [in] entrada a porta na qual o motor esta conectado
- * @param [in] reverse define se o motor deve ser invertido ou não
+ * @param int entrada a porta na qual o motor esta conectado
+ * @param int reverse define se o motor deve ser invertido ou não
  * @return N/A.
  */
 Motor::Motor(int entrada, bool reverse) {
@@ -30,13 +30,16 @@ Motor::Motor(int entrada, bool reverse) {
   //  this->encoder = encoder;
     this->encoder = encoderESP;
   }
+
+  ledcWrite(channelA, 0);
+  ledcWrite(channelB, 0);
 }
 
 
 /**
  * @brief Define as entradas digitais da Arara baseado na porta do motor
  *
- * @param [in] entrada a porta na qual o motor esta conectado
+ * @param [in] Porta na qual o motor esta conectado
  * @return N/A.
  */
 void Motor::pinos(int entrada) {
@@ -77,7 +80,7 @@ void Motor::pinos(int entrada) {
  */
 void Motor::setPower(double power) {
   power = max(-1.0, min(1.0, power));
-  int output_res = abs(power) * 1002;
+  int output_res = abs(power) * MAX_OUTPUT;
   if (power < 0) {
     ledcWrite(channelA, 0);
     ledcWrite(channelB, output_res);
