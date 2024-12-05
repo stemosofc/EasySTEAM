@@ -1,2 +1,2 @@
-# stemOSBoard
- Biblioteca Arara para Arduino IDE
+# EasySTEAM
+ Biblioteca EasySTEAM para Arduino IDE
