@@ -1,7 +1,7 @@
-#include "EasySTEAM.h"
+#include "Arara.h"
 
 void setup() {
-    easySTEAM.start();
+    Arara.start();
     Serial.begin(115200);
 }
 

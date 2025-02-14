@@ -1,8 +1,8 @@
-#include "EasySTEAN.h"
+#include "Arara.h"
 
 void setup() {
     Serial.begin(115200);
-    easySTEAM.start();
+    Arara.start();
 }
 
 void loop() {

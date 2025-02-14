@@ -1,8 +1,8 @@
-#include "EasySTEAM.h"
+#include "Arara.h"
 
 void setup() {
     Serial.begin(115200);
-    EasySTEAM.start();
+    Arara.start();
     imu.init();
 }
 
